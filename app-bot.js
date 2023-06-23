@@ -14,6 +14,10 @@ const chatIdCache = {}
 
 function isMentioned(message) {
     try {
+        // ignore messages without text
+        if (!message.text) {
+            return false
+        }
         if (message.chat.type === "private") {
             return true
         }
