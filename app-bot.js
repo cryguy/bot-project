@@ -60,7 +60,7 @@ bot.on('message', async (msg) => {
 
     // add the message along with the username to the cache
     chatIdCache[chatId].push({
-        "role": "user", "content": msg.from.username + " said : " + msg.text
+        "role": "user", "content": msg.from.username ? msg.from.username : msg.from.first_name + " said : " + msg.text
     })
 
     // get the response from the chat api
